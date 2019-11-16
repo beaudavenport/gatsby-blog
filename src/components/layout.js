@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 
 import Header from './header';
 import './layout.css';
+
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,6 +28,27 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
+        <nav>
+          <Link
+            to="/"
+            activeClassName="active"
+            activeStyle={{ borderBottom: '2px solid orange' }}
+          >
+            Blog
+          </Link>
+          <Link
+            to="/about/"
+            activeStyle={{ borderBottom: '2px solid orange' }}
+          >
+            About
+          </Link>
+          <Link
+            to="/projects/"
+            activeStyle={{ borderBottom: '2px solid orange' }}
+          >
+            Projects
+          </Link>
+        </nav>
         <main>{children}</main>
         <footer>
           ©
