@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-pages-index-js","path":"/","result":{"pageContext":{"isCreatedByStatefulCreatePages":true}}}
+{"componentChunkName":"component---src-pages-index-js","path":"/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"id":"cbc6aff7-09d3-5435-a573-4e59b109841d","frontmatter":{"title":"Hello World","publishDate":"11-16-2019"},"excerpt":"<p>Markdown tastic</p>","fields":{"slug":"/blog-posts/hello-world/"}}}]}},"pageContext":{"isCreatedByStatefulCreatePages":true}}}
