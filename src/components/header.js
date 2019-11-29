@@ -5,37 +5,37 @@ import headerStyles from './header.module.css';
 import Image from './image';
 
 const Header = ({ siteTitle, siteDescription }) => (
-  <header
-    style={{
-      marginBottom: '1.45rem',
-      display: 'flex',
-      margin: '0 auto',
-      maxWidth: 960,
-      padding: '1.45rem 1.0875rem',
-    }}
-  >
-    <div style={{ flex: 1 }}>
-      <Image />
-      <ul>
-        <li className={headerStyles.socialLink}><a href="https://twitter.com/beau_dav">@beau_dav</a></li>
-        <li className={headerStyles.socialLink}><a href="https://github.com/beaudavenport">beaudavenport</a></li>
-      </ul>
+  <header className={headerStyles.container}>
+    <div className={headerStyles.headerGroup}>
+      <div>
+        <Image />
+      </div>
+      <div>
+        <h3 style={{ margin: 0, marginTop: '1rem' }}>
+          <Link
+            to="/"
+          >
+            {siteTitle}
+          </Link>
+        </h3>
+        <p style={{ marginBottom: '1rem' }}>
+          <a href="https://twitter.com/beau_dav">twitter</a>
+          {' '}
+          |
+          {' '}
+          <a href="https://github.com/beaudavenport">github</a>
+          {' '}
+          |
+          {' '}
+          <a href="https://github.com/beaudavenport">resume</a>
+        </p>
+      </div>
     </div>
-    <div style={{ flex: 2 }}>
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-      <h3>
+    <div>
+      <p style={{ marginBottom: '1rem' }}>
         {siteDescription}
-      </h3>
-      <nav style={{ display: 'flex' }}>
+      </p>
+      <nav style={{ display: 'flex', justifyContent: 'center' }}>
         <Link
           to="/"
           className={headerStyles.link}
