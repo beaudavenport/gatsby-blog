@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: '/gatsby-blog',
   siteMetadata: {
     title: 'Beau Davenport',
-    description: 'My blog',
+    description: 'Software engineering blog and portfolio. Explorations in React, React-Native, and JS generally.',
     author: '@gatsbyjs',
   },
   plugins: [

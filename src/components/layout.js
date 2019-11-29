@@ -12,6 +12,7 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          description
         }
       }
     }
@@ -19,7 +20,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: '0 auto',
@@ -28,27 +28,7 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <nav>
-          <Link
-            to="/"
-            activeClassName="active"
-            activeStyle={{ borderBottom: '2px solid orange' }}
-          >
-            Blog
-          </Link>
-          <Link
-            to="/about/"
-            activeStyle={{ borderBottom: '2px solid orange' }}
-          >
-            About
-          </Link>
-          <Link
-            to="/projects/"
-            activeStyle={{ borderBottom: '2px solid orange' }}
-          >
-            Projects
-          </Link>
-        </nav>
+        <Header siteTitle={data.site.siteMetadata.title} siteDescription={data.site.siteMetadata.description} />
         <main>{children}</main>
         <footer>
           ©
