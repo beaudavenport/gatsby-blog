@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import headerStyles from './header.module.css';
+import { useStaticQuery, graphql } from 'gatsby';
+import layoutStyles from './layout.module.css';
 
-import Header from './header';
+import Sidebar from './sidebar';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,10 +18,15 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <div className={headerStyles.mainContainer}>
-      <div className={headerStyles.mainGrid}>
-        <Header siteTitle={data.site.siteMetadata.title} siteDescription={data.site.siteMetadata.description} />
-        <main>{children}</main>
+    <div className={layoutStyles.mainContainer}>
+      <div className={layoutStyles.mainGrid}>
+        <Sidebar
+          siteTitle={data.site.siteMetadata.title}
+          siteDescription={data.site.siteMetadata.description}
+        />
+        <main>
+          {children}
+        </main>
       </div>
       <footer style={{ textAlign: 'center' }}>
           ©

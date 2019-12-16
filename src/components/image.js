@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import headerStyles from './header.module.css';
+import sidebarStyles from './sidebar.module.css';
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -27,7 +27,7 @@ const Image = () => {
     }
   `);
 
-  return <Img className={headerStyles.avatar} fluid={data.placeholderImage.childImageSharp.fluid} />;
+  return <Img className={sidebarStyles.avatar} fluid={data.placeholderImage.childImageSharp.fluid} />;
 };
 
 export default Image;
