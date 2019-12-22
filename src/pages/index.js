@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { PropTypes } from 'prop-types';
-import moment from 'moment';
 import Img from 'gatsby-image';
 import SEO from '../components/seo';
 import containerStyles from '../components/container.module.css';
@@ -19,9 +18,7 @@ const IndexPage = ({ data }) => {
             <Img fixed={node.frontmatter.image.childImageSharp.fixed} />
             <div style={{ marginLeft: '2rem' }}>
               <h1 style={{ marginBottom: '1rem', textDecoration: 'underline' }}>{node.frontmatter.title}</h1>
-              <p style={{ marginBottom: '0', color: '#a30000' }}>
-                {moment(node.frontmatter.publishDate).format('MMM Do, YYYY')}
-              </p>
+              <p style={{ marginBottom: '.5rem', color: '#a30000', fontWeight: 'bold' }}>{node.frontmatter.publishDate}</p>
               <p style={{ color: 'black', fontStyle: 'italic' }}>
                 {node.frontmatter.tagline}
               </p>
@@ -56,7 +53,7 @@ export const query = graphql`
              tagline
              image {
               childImageSharp {
-                fixed(width: 100, height: 100) {
+                fixed(width: 150, height: 150, quality: 90) {
                   ...GatsbyImageSharpFixed
                 }
               }

@@ -5,6 +5,7 @@ oceanBreezeTheme.overrideThemeStyles = () => ({
   a: {
     backgroundImage: 'none',
     color: '#247cc3',
+    textShadow: 'none',
   },
 });
 

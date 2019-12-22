@@ -1,10 +1,23 @@
 .container {
     margin: 2rem auto;
-  }
+    margin-top: 0;
+}
+
+.title {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
   
-  .date {
-      color: #00000069;
-      margin-bottom: 2rem;
-      font-weight: bold;
-      font-size: larger;
-  }
+.date {
+    color: #a30000;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.tagline {
+    margin-bottom: 1rem;
+}
+
+.image-container {
+    margin: 0 auto;
+}

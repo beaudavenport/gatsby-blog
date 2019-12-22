@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import moment from 'moment';
+import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import blogPostStyles from '../components/blogPost.module.css';
 
@@ -9,13 +9,24 @@ import blogPostStyles from '../components/blogPost.module.css';
 export default function BlogTemplate({ data }) {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
-  const { title, publishDate, tagline } = frontmatter;
+  const {
+    title, publishDate, tagline, image, imageAttribution,
+  } = frontmatter;
   return (
     <Layout>
       <div className={blogPostStyles.container}>
-        <h1>{title}</h1>
-        <p>{tagline}</p>
-        <p className={blogPostStyles.date}>{moment(publishDate).format('MMM Do, YYYY')}</p>
+        <h1 className={blogPostStyles.title}>{title}</h1>
+        <p className={blogPostStyles.date}>{publishDate}</p>
+        <p className={blogPostStyles.tagline}>{tagline}</p>
+        <div className={blogPostStyles.imageContainer}>
+          <Img
+            fluid={image.childImageSharp.fluid}
+            style={{
+              maxHeight: 500, width: '100%', objectFit: 'cover', objectPosition: '50%',
+            }}
+          />
+          <div dangerouslySetInnerHTML={{ __html: imageAttribution }} />
+        </div>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
@@ -30,9 +41,17 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $path } }) {
       html
       frontmatter {
-        publishDate
         title
+        publishDate
         tagline
+        image {
+          childImageSharp {
+            fluid(maxWidth: 500, quality: 90) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        imageAttribution
       }
       description: excerpt(pruneLength: 130)
       fields {
