@@ -25,7 +25,7 @@ export default function BlogTemplate({ data }) {
               maxHeight: 500, width: '100%', objectFit: 'cover', objectPosition: '50%',
             }}
           />
-          <div dangerouslySetInnerHTML={{ __html: imageAttribution }} />
+          <div style={{ textAlign: 'right' }} dangerouslySetInnerHTML={{ __html: imageAttribution }} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>

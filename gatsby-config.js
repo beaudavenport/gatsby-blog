@@ -2,12 +2,13 @@ module.exports = {
   pathPrefix: '/gatsby-blog',
   siteMetadata: {
     title: 'Beau Davenport',
-    description: 'Software Engineer/JS Fanboy/Dad',
+    description: 'Software Engineer/JS Lover/Dad',
     author: '@beau_dav',
   },
   plugins: [
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
+    'gatsby-remark-images',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -35,7 +36,19 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography',
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 400,
+            },
+          },
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

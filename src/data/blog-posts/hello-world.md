@@ -13,7 +13,11 @@ One of the trickiest balancing acts I've found in building your career is acknow
 
 ## "Simplify" - a Mantra for a New Decade
 
-This is the third incarnation of my portolio/blog site. Each version has been a reimagination of the last, with an effort to include some of the most recent technologies I encounter in my day-to-day development work. It began with a Bootstrap extravaganza:
+This is the third incarnation of my portolio/blog site. Each version has been a reimagination of the last, with an effort to include some of the most recent technologies I encounter in my day-to-day development work. It began with a Bootstrap extravaganza in 2013:
 
-And then came to this shenanigans:
+In 2014, I pushed myself to roll my own media queries, with a more nuanced design:
+
+![ ](../images/old-blog-screenshot-desktop.png)
+
+For 2019, I knew I wanted a cleaner, simpler, content-driven design. This has always been a personal challenge for me - I tend to _keep adding stuff_, but over the years I've learned more and more how important simplicity is, both in design and development.
 
