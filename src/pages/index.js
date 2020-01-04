@@ -5,6 +5,8 @@ import Img from 'gatsby-image';
 import SEO from '../components/seo';
 import containerStyles from '../components/container.module.css';
 import blogPageStyles from './blogPage.module.css';
+import pageStyles from './page.module.css';
+
 import Layout from '../components/layout';
 
 const IndexPage = ({ data }) => {
@@ -12,6 +14,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
+      <h3 className={pageStyles.contentTitle}>Blog Posts</h3>
       <div className={containerStyles.container}>
         {first3Nodes.map((node) => (
           <Link to={node.fields.slug} className={blogPageStyles.linkContainer}>

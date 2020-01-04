@@ -1,14 +1,12 @@
 import React from 'react';
 import SEO from '../components/seo';
-import containerStyles from '../components/container.module.css';
+import pageStyles from './page.module.css';
 import Layout from '../components/layout';
 
 const ProjectsPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div className={containerStyles.container}>
-      <div>Here I am</div>
-    </div>
+    <h3 className={pageStyles.contentTitle}>Portfolio</h3>
   </Layout>
 );
 
