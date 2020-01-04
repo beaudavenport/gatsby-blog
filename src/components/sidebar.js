@@ -28,7 +28,7 @@ const Sidebar = ({ siteTitle, siteDescription }) => (
             |
             {' '}
           </span>
-          <Link to="/projects/">
+          <Link to="/portfolio/">
             Portfolio
           </Link>
         </p>

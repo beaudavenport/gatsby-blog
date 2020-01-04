@@ -12,6 +12,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'slug',
       value: slug,
     });
+    createNodeField({
+      node,
+      name: 'imagesDir',
+      value: `${slug.substring(1, slug.length - 1)}/images`,
+    });
   }
 };
 
@@ -32,6 +37,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
             fields {
               slug
+              imagesDir
             }
           }
         }
@@ -48,7 +54,9 @@ exports.createPages = ({ actions, graphql }) => {
         component: path.resolve(
           `src/templates/${String(node.frontmatter.type)}.js`,
         ),
-        context: {}, // additional data can be passed via context
+        context: {
+          imagesDir: node.fields.imagesDir,
+        }, // additional data can be passed via context
       });
     });
     Promise.resolve();

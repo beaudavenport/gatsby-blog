@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
-import blogPostStyles from '../components/blogPost.module.css';
+import blogPostStyles from './blogPost.module.css';
 
 
 export default function BlogTemplate({ data }) {
@@ -14,7 +14,7 @@ export default function BlogTemplate({ data }) {
   } = frontmatter;
   return (
     <Layout>
-      <div className={blogPostStyles.container}>
+      <div>
         <h1 className={blogPostStyles.title}>{title}</h1>
         <p className={blogPostStyles.date}>{publishDate}</p>
         <p className={blogPostStyles.tagline}>{tagline}</p>
