@@ -4,8 +4,11 @@ import oceanBreezeTheme from 'typography-theme-ocean-beach';
 oceanBreezeTheme.overrideThemeStyles = () => ({
   a: {
     backgroundImage: 'none',
-    color: '#247cc3',
+    color: '#288ddf',
     textShadow: 'none',
+  },
+  p: {
+    marginBottom: '1rem',
   },
 });
 

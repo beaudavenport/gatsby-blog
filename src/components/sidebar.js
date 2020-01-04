@@ -5,35 +5,33 @@ import sidebarStyles from './sidebar.module.css';
 import Image from './image';
 
 const Sidebar = ({ siteTitle, siteDescription }) => (
-  <sidebar>
-    <div className={sidebarStyles.sidebarGroup}>
-      <div className={sidebarStyles.avatarGroup}>
-        <div className={sidebarStyles.avatarImageContainer}>
-          <Image />
-        </div>
-        <div className={sidebarStyles.avatarTextContainer}>
-          <h3 style={{ margin: 0, marginTop: '1rem' }}>
-            <Link
-              to="/"
-            >
-              {siteTitle}
-            </Link>
-          </h3>
-          <p className={sidebarStyles.subtitle}>{siteDescription}</p>
-          <div>
-            <p style={{ marginBottom: '1rem', fontSize: '1.15rem' }}>
-              <Link to="/about/">
+  <sidebar className={sidebarStyles.avatarGroup}>
+    <div className={sidebarStyles.avatarImageContainer}>
+      <Image />
+    </div>
+    <div className={sidebarStyles.avatarTextContainer}>
+      <h3 className={sidebarStyles.avatarName}>
+        <Link
+          to="/"
+        >
+          {siteTitle}
+        </Link>
+      </h3>
+      <p className={sidebarStyles.subtitle}>{siteDescription}</p>
+      <div>
+        <p>
+          <Link to="/about/">
             About Me
-              </Link>
-              {' '}
-          |
-              {' '}
-              <Link to="/projects/">
+          </Link>
+          <span className={sidebarStyles.pipe}>
+            {' '}
+            |
+            {' '}
+          </span>
+          <Link to="/projects/">
             Portfolio
-              </Link>
-            </p>
-          </div>
-        </div>
+          </Link>
+        </p>
       </div>
     </div>
   </sidebar>

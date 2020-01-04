@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import './layout.css';
 import layoutStyles from './layout.module.css';
 
 import Sidebar from './sidebar';
@@ -18,21 +19,21 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <div className={layoutStyles.mainContainer}>
+    <div>
       <div className={layoutStyles.mainGrid}>
         <Sidebar
           siteTitle={data.site.siteMetadata.title}
           siteDescription={data.site.siteMetadata.description}
         />
-        <main>
+        <main className={layoutStyles.contentContainer}>
           {children}
         </main>
       </div>
-      <footer style={{ textAlign: 'center' }}>
-          ©
+      <footer className={layoutStyles.footer}>
+          © Beau Davenport,
         {' '}
         {new Date().getFullYear()}
-, Built with
+ . Built with
         {' '}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
