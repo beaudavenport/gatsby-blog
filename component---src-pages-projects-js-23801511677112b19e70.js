@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{"16l3":function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),l=n.n(a),o=n("vrFN"),c=n("Xg/t"),r=n.n(c),i=n("Bl7J");t.default=function(){return l.a.createElement(i.a,null,l.a.createElement(o.a,{title:"Home"}),l.a.createElement("h3",{className:r.a.contentTitle},"Portfolio"))}}}]);
-//# sourceMappingURL=component---src-pages-projects-js-23801511677112b19e70.js.map
