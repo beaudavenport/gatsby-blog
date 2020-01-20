@@ -1,4 +1,39 @@
 .link-container {
   display: flex;
   align-items: center;
+  margin-bottom: 3rem;
+}
+
+.thumbnail-container {
+  width: 25%;
+}
+
+.text-container {
+  width: 75%;
+  margin-left: 1rem;
+}
+
+.title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+
+.date {
+  margin-bottom: .25rem;
+  color: #a30000;
+  font-weight: bold;
+}
+
+.caption {
+  font-style: italic;
+  color: black;
+}
+
+
+@media (max-width: 901px) {
+  .title {
+    font-size: 22px;
+    margin-bottom: .5rem;
+  }
 }

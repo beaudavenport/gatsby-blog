@@ -18,11 +18,11 @@ const IndexPage = ({ data }) => {
       <div className={containerStyles.container}>
         {first3Nodes.map((node) => (
           <Link to={node.fields.slug} className={blogPageStyles.linkContainer}>
-            <Img fixed={node.frontmatter.image.childImageSharp.fixed} />
-            <div style={{ marginLeft: '2rem' }}>
-              <h1 style={{ marginBottom: '1rem', textDecoration: 'underline' }}>{node.frontmatter.title}</h1>
-              <p style={{ marginBottom: '.5rem', color: '#a30000', fontWeight: 'bold' }}>{node.frontmatter.publishDate}</p>
-              <p style={{ color: 'black', fontStyle: 'italic' }}>
+            <Img className={blogPageStyles.thumbnailContainer} fixed={node.frontmatter.image.childImageSharp.fixed} />
+            <div className={blogPageStyles.textContainer}>
+              <h1 className={blogPageStyles.title}>{node.frontmatter.title}</h1>
+              <p className={blogPageStyles.date}>{node.frontmatter.publishDate}</p>
+              <p className={blogPageStyles.caption}>
                 {node.frontmatter.tagline}
               </p>
             </div>
