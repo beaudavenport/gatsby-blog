@@ -1,7 +1,6 @@
 @media (max-width: 900px) {
     .avatar-group {
         display: flex;
-        margin-bottom: 1rem;
         align-items: center;
         justify-content: center;
         padding: 0;
@@ -21,10 +20,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.avatar-group {
-    padding-right: 1rem;
 }
 
 .avatar {
@@ -75,4 +70,22 @@
 .pipe {
     font-size: larger;
     color: #288ddf;
+}
+
+@media (max-width: 900px) {
+    .link-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .avatar-group {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 901px) {
+    .avatar-group {
+        margin-top: 50px;
+        padding-right: 1rem;
+    }
 }

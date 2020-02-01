@@ -4,13 +4,9 @@
 }
   
 .date {
-    color: #a30000;
+    color: #747474;
     margin-bottom: .5rem;
-    font-weight: bold;
-}
-
-.tagline {
-    font-style: italic;
+    font-size: medium;
 }
 
 .image-container {

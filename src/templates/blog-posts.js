@@ -15,9 +15,9 @@ export default function BlogTemplate({ data }) {
   return (
     <Layout>
       <div>
-        <p className={blogPostStyles.date}>{publishDate}</p>
         <h1 className={blogPostStyles.title}>{title}</h1>
         <p className={blogPostStyles.tagline}>{tagline}</p>
+        <p className={blogPostStyles.date}>{publishDate}</p>
         <div className={blogPostStyles.imageContainer}>
           <Img
             fluid={image.childImageSharp.fluid}

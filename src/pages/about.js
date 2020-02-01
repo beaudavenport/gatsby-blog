@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import pageStyles from './page.module.css';
+import resume from '../data/files/Resume-2020.pdf';
 
 const AboutPage = () => (
   <Layout>
@@ -23,7 +24,7 @@ const AboutPage = () => (
       <a href="https://github.com/beaudavenport">github</a>
       , or download my
       {' '}
-      <a href="https://github.com/beaudavenport">resume</a>
+      <a href={resume}>resume</a>
 .
     </p>
   </Layout>

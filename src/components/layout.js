@@ -28,6 +28,7 @@ const Layout = ({ children }) => {
         <main className={layoutStyles.contentContainer}>
           {children}
         </main>
+        <div />
       </div>
       <footer className={layoutStyles.footer}>
           © Beau Davenport,

@@ -10,25 +10,36 @@ const Sidebar = ({ siteTitle, siteDescription }) => (
       <Image />
     </div>
     <div className={sidebarStyles.avatarTextContainer}>
-      <h3 className={sidebarStyles.avatarName}>
+      <h2 className={sidebarStyles.avatarName}>
         <Link
           to="/"
         >
           {siteTitle}
         </Link>
-      </h3>
+      </h2>
       <p className={sidebarStyles.subtitle}>{siteDescription}</p>
-      <div>
-        <p>
-          <Link to="/about/">
+      <div className={sidebarStyles.linkContainer}>
+        <p style={{ marginBottom: '0.5rem' }}>
+          <Link
+            to="/"
+            style={{ textDecoration: 'underline' }}
+          >
+            Blog
+          </Link>
+        </p>
+        <p style={{ marginBottom: '0.5rem' }}>
+          <Link
+            to="/about/"
+            style={{ textDecoration: 'underline' }}
+          >
             About Me
           </Link>
-          <span className={sidebarStyles.pipe}>
-            {' '}
-            |
-            {' '}
-          </span>
-          <Link to="/portfolio/">
+        </p>
+        <p>
+          <Link
+            to="/portfolio/"
+            style={{ textDecoration: 'underline' }}
+          >
             Portfolio
           </Link>
         </p>

@@ -1,3 +1,9 @@
 .container {
   margin: 3rem auto;
 }
+
+@media (min-width: 901px) {
+  .container {
+    width: 90%;
+  }
+}

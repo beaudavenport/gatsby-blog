@@ -17,16 +17,16 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   text-decoration: underline;
+  font-size: xx-large;
 }
 
 .date {
   margin-bottom: .25rem;
-  color: #a30000;
-  font-weight: bold;
+  color: #747474;
+  font-size: medium;
 }
 
 .caption {
-  font-style: italic;
   color: black;
 }
 
