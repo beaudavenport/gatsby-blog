@@ -4,7 +4,8 @@ import React from 'react';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import blogPostStyles from './blogPost.module.css';
-
+import SEO from '../components/seo';
+import pageStyles from '../pages/page.module.css';
 
 export default function BlogTemplate({ data }) {
   const { markdownRemark } = data;
@@ -14,6 +15,8 @@ export default function BlogTemplate({ data }) {
   } = frontmatter;
   return (
     <Layout>
+      <SEO title={title} />
+      <p className={pageStyles.contentTitle}>Blog</p>
       <div>
         <h1 className={blogPostStyles.title}>{title}</h1>
         <p className={blogPostStyles.tagline}>{tagline}</p>

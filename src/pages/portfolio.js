@@ -12,7 +12,7 @@ const ProjectsPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h3 className={pageStyles.contentTitle}>Portfolio</h3>
+      <p className={pageStyles.contentTitle}>Portfolio</p>
       {projectNodes.map((projectNode) => (
         <div>
           <Link to={projectNode.fields.slug}>

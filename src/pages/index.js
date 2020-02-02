@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h3 className={pageStyles.contentTitle}>Blog Posts</h3>
+      <p className={pageStyles.contentTitle}>Blog</p>
       <div className={containerStyles.container}>
         {first3Nodes.map((node) => (
           <Link to={node.fields.slug} className={blogPageStyles.linkContainer}>

@@ -8,11 +8,32 @@ import resume from '../data/files/Resume-2020.pdf';
 const AboutPage = () => (
   <Layout>
     <SEO title="About Me" />
-    <h3 className={pageStyles.contentTitle}>About Me</h3>
+    <p className={pageStyles.contentTitle}>About Me</p>
     <p>
       Hey there! My name is Beau, and I’m a software engineer in St. Louis, Missouri.
-      I specialize in React.js, React-Native, SSG technologies (like Gatsby), node.js,
-      and cloud infrastructure.
+    </p>
+    <p>
+      I specialize in
+      {' '}
+      <strong>ReactJS</strong>
+,
+      {' '}
+      <strong>React-Native</strong>
+,
+      {' '}
+      <strong>SSG technologies </strong>
+(like
+      {' '}
+      <strong>Gatsby</strong>
+),
+      {' '}
+      <strong>NodeJS</strong>
+,
+      {' '}
+      and
+      {' '}
+      <strong>Cloud Infrastructure</strong>
+.
     </p>
     <p>
       <strong>Stay Connected: </strong>
