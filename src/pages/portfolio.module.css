@@ -1,0 +1,23 @@
+
+@media(min-width: 901px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+}
+
+.title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.caption {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: .8rem;
+}
+
+.thumbnail-container {
+  width: 100%;
+}

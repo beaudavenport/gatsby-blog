@@ -1,6 +1,6 @@
 ---
 type: projects
-title: Celestial Loom V2
+title: Inventory Helper
 url: celestialoomastrology.com
 techStack: Gatsby, Netlify, Netlify CMS, Snipcart e-commerce 
 deployDate: May 2019
