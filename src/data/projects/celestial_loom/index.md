@@ -1,7 +1,7 @@
 ---
 type: projects
 title: Celestial Loom V2
-url: celestialoomastrology.com
+url: http://celestialoomastrology.com
 techStack: Gatsby, Netlify, Netlify CMS, Snipcart e-commerce 
 deployDate: May 2019
 caption: 'Online Astrology portal for ordering, events, and blog posts'

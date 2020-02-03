@@ -23,7 +23,7 @@ const ProjectsPage = ({ data }) => {
             <Link to={node.fields.slug} className={portfolioStyles.linkContainer}>
               <div className={portfolioStyles.textContainer}>
                 <h1 className={portfolioStyles.title}>{node.frontmatter.title}</h1>
-                <p className={blogPageStyles.caption}>
+                <p className={portfolioStyles.caption}>
                   {node.frontmatter.caption}
                 </p>
               </div>

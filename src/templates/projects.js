@@ -9,12 +9,18 @@ export default function ProjectTemplate({ data }) {
   const { markdownRemark, allFile } = data;
   const { frontmatter, html } = markdownRemark;
   const {
-    title,
+    title, techStack, url,
   } = frontmatter;
   return (
     <Layout>
       <div className={projectStyles.container}>
         <h1 className={projectStyles.title}>{title}</h1>
+        <p className={projectStyles.title}>
+          <strong>Tech Stack:</strong>
+          {' '}
+          {techStack}
+        </p>
+        <a href={url}>{url}</a>
         <div dangerouslySetInnerHTML={{ __html: html }} />
         {allFile.edges.map((edge) => (
           <Img fixed={edge.node.childImageSharp.fixed} />))}
@@ -32,6 +38,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        techStack
+        url
       }
       description: excerpt(pruneLength: 130)
       fields {
