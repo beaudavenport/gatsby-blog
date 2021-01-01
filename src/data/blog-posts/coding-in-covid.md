@@ -1,6 +1,7 @@
 ---
 type: blog-posts
 number: 3
+readingTime: '6 min'
 publishDate: 'Jan 1, 2021'
 title: Coding in Covid
 tagline: 'Thoughts about programming in a dumpster fire of a year'

@@ -14,8 +14,13 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     });
     createNodeField({
       node,
-      name: 'imagesDir',
-      value: `${slug.substring(1, slug.length - 1)}/images`,
+      name: 'desktopImagesDir',
+      value: `${slug.substring(1, slug.length - 1)}/images/desktop`,
+    });
+    createNodeField({
+      node,
+      name: 'mobileImagesDir',
+      value: `${slug.substring(1, slug.length - 1)}/images/mobile`,
     });
   }
 };
@@ -37,7 +42,8 @@ exports.createPages = ({ actions, graphql }) => {
             }
             fields {
               slug
-              imagesDir
+              desktopImagesDir
+              mobileImagesDir
             }
           }
         }
@@ -55,7 +61,8 @@ exports.createPages = ({ actions, graphql }) => {
           `src/templates/${String(node.frontmatter.type)}.js`,
         ),
         context: {
-          imagesDir: node.fields.imagesDir,
+          desktopImagesDir: node.fields.desktopImagesDir,
+          mobileImagesDir: node.fields.mobileImagesDir,
         }, // additional data can be passed via context
       });
     });

@@ -11,7 +11,7 @@ export default function BlogTemplate({ data }) {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   const {
-    title, publishDate, tagline, image, imageAttribution,
+    title, publishDate, tagline, image, imageAttribution, readingTime,
   } = frontmatter;
   return (
     <Layout>
@@ -20,7 +20,14 @@ export default function BlogTemplate({ data }) {
       <div>
         <h1 className={blogPostStyles.title}>{title}</h1>
         <p className={blogPostStyles.tagline}>{tagline}</p>
-        <p className={blogPostStyles.date}>{publishDate}</p>
+        <p>
+          <span className={blogPostStyles.date}>{publishDate}</span>
+          <span className={blogPostStyles.readingTime}>
+            {' • '}
+            {readingTime}
+            {' reading time'}
+          </span>
+        </p>
         <div className={blogPostStyles.imageContainer}>
           <Img
             fluid={image.childImageSharp.fluid}
@@ -47,6 +54,7 @@ export const pageQuery = graphql`
         title
         publishDate
         tagline
+        readingTime
         image {
           childImageSharp {
             fluid(maxWidth: 500, quality: 90) {

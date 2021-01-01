@@ -3,27 +3,59 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 import projectStyles from './project.module.css';
+import pageStyles from '../pages/page.module.css';
+import { Carousel } from 'react-responsive-carousel';
 
 export default function ProjectTemplate({ data }) {
-  const { markdownRemark, allFile } = data;
+  const { markdownRemark, desktopImages, mobileImages } = data;
   const { frontmatter, html } = markdownRemark;
   const {
     title, techStack, url,
   } = frontmatter;
   return (
     <Layout>
+      <SEO title={title} />
+      <p className={pageStyles.contentTitle}>Portfolio</p>
       <div className={projectStyles.container}>
         <h1 className={projectStyles.title}>{title}</h1>
-        <p className={projectStyles.title}>
+        <p className={projectStyles.subtitle}>
           <strong>Tech Stack:</strong>
           {' '}
           {techStack}
         </p>
-        <a href={url}>{url}</a>
+        <p><a href={url}>{url}</a></p>
         <div dangerouslySetInnerHTML={{ __html: html }} />
-        {allFile.edges.map((edge) => (
-          <Img fixed={edge.node.childImageSharp.fixed} />))}
+        <hr />
+        <div className={projectStyles.carouselContainer}>
+          <div className={projectStyles.carouselItemDesktop}>
+            <p className={projectStyles.carouselItemCaption}>Desktop</p>
+            <Carousel>
+              {desktopImages.edges.map((edge, i) => (
+                <div>
+                  <Img 
+                    fluid={edge.node.childImageSharp.fluid} 
+                    alt={`Desktop Screenshot ${i + 1} of ${title}`} 
+                  />)
+                </div>
+                ))}
+            </Carousel>
+          </div>
+          <div className={projectStyles.carouselItemMobile}>
+            <p className={projectStyles.carouselItemCaption}>Mobile</p>
+            <Carousel>
+              {mobileImages.edges.map((edge, i) => (
+                <div>
+                  <Img 
+                    fluid={edge.node.childImageSharp.fluid} 
+                    alt={`Mobile Screenshot ${i + 1} of ${title}`} 
+                  />)
+                </div>
+                ))}
+            </Carousel>
+          </div>
+        </div>
       </div>
     </Layout>
   );
@@ -33,7 +65,7 @@ ProjectTemplate.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query($path: String!, $imagesDir: String!) {
+  query($path: String!, $desktopImagesDir: String!, $mobileImagesDir: String!) {
     markdownRemark(fields: { slug: { eq: $path } }) {
       html
       frontmatter {
@@ -46,12 +78,23 @@ export const pageQuery = graphql`
         slug
       }
     }
-    allFile(filter: {relativeDirectory: {eq: $imagesDir}}) {
+    desktopImages: allFile(filter: {relativeDirectory: {eq: $desktopImagesDir}}) {
       edges {
         node {
           childImageSharp {
-            fixed(width: 150, height: 150, quality: 90) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+    mobileImages: allFile(filter: {relativeDirectory: {eq: $mobileImagesDir}}) {
+      edges {
+        node {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

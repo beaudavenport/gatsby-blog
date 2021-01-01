@@ -1,0 +1,29 @@
+.container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: xx-large;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.carousel-item-desktop {
+  width: 600px;
+}
+
+.carousel-item-mobile {
+  width: 300px;
+}
+
+.carousel-item-caption {
+  text-align: center;
+  font-style: italic;
+}

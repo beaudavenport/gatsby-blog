@@ -21,9 +21,16 @@ const IndexPage = ({ data }) => {
             <Img className={blogPageStyles.thumbnailContainer} fixed={node.frontmatter.image.childImageSharp.fixed} />
             <div className={blogPageStyles.textContainer}>
               <h1 className={blogPageStyles.title}>{node.frontmatter.title}</h1>
-              <p className={blogPageStyles.date}>{node.frontmatter.publishDate}</p>
               <p className={blogPageStyles.caption}>
                 {node.frontmatter.tagline}
+              </p>
+              <p>
+                <span className={blogPageStyles.date}>{node.frontmatter.publishDate}</span>
+                <span className={blogPageStyles.readingTime}>
+                  {' • '}
+                  {node.frontmatter.readingTime}
+                  {' reading time'}
+                </span>
               </p>
             </div>
           </Link>
@@ -61,6 +68,7 @@ export const query = graphql`
             title
             publishDate
             tagline
+            readingTime
             image {
             childImageSharp {
               fixed(width: 150, height: 150, quality: 90) {

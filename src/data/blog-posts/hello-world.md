@@ -2,6 +2,7 @@
 type: blog-posts
 publishDate: 'Dec 21, 2019'
 number: 1
+readingTime: '8 min'
 title: A New Site for a New Decade
 tagline: There's no better way to break in the 2020's than with an overdue facelift.
 image: '../images/leonard-von-bibra-new-years.jpg'
