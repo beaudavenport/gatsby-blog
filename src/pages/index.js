@@ -40,34 +40,41 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const query = graphql`
-   query {
-     allMarkdownRemark(
-       limit: 3
-       filter: { frontmatter: { type: { eq: "blog-posts"} } },
-       sort: { fields: [frontmatter___publishDate], order: DESC }
-     ) {
-       totalCount
-       edges {
-         node {
-           id
-           frontmatter {
-             title
-             publishDate
-             tagline
-             image {
-              childImageSharp {
-                fixed(width: 150, height: 150, quality: 90) {
-                  ...GatsbyImageSharpFixed
-                }
+  query {
+    placeholderImage: file(relativePath: { eq: "images/shop.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    allMarkdownRemark(
+      limit: 3
+      filter: { frontmatter: { type: { eq: "blog-posts"} } },
+      sort: { fields: [frontmatter___number], order: DESC }
+    ) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            publishDate
+            tagline
+            image {
+            childImageSharp {
+              fixed(width: 150, height: 150, quality: 90) {
+                ...GatsbyImageSharpFixed
               }
-             }
-           }
-           excerpt(format: HTML, pruneLength: 250)
-           fields {
-             slug
-           }
-         }
-       }
-     }
-   }
+            }
+            }
+          }
+          excerpt(format: HTML, pruneLength: 250)
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
  `;
