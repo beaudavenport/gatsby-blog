@@ -11,14 +11,13 @@ import portfolioStyles from './portfolio.module.css';
 
 const ProjectsPage = ({ data }) => {
   const projectNodes = data.allMarkdownRemark.edges.map((edge) => edge.node);
-
   return (
     <Layout>
       <SEO title="Portfolio" />
       <h6 className={pageStyles.breadcrumbs}>
         <Link to="/">Home</Link>
         {' / '}
-        <Link to="/">Portfolio</Link>
+        <Link to="/portfolio/">Portfolio</Link>
       </h6>
       <div className={containerStyles.container}>
         <div className={portfolioStyles.container}>
@@ -30,7 +29,10 @@ const ProjectsPage = ({ data }) => {
                   {node.frontmatter.caption}
                 </p>
               </div>
-              <Img className={portfolioStyles.thumbnailContainer} fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
+              <Img
+                className={portfolioStyles.thumbnailContainer}
+                fluid={node.frontmatter.thumbnail.childImageSharp.fluid}
+              />
             </Link>
           ))}
         </div>

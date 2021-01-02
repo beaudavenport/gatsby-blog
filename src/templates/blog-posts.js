@@ -11,7 +11,7 @@ export default function BlogTemplate({ data }) {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   const {
-    title, publishDate, tagline, image, imageAttribution, readingTime,
+    title, publishDate, tagline, image, imageAttribution,
   } = frontmatter;
   return (
     <Layout>
@@ -19,7 +19,7 @@ export default function BlogTemplate({ data }) {
       <h6 className={pageStyles.breadcrumbs}>
         <Link to="/">Home</Link>
         {' / '}
-        <Link to="/">Blog</Link>
+        <Link to="/blog/">Blog</Link>
       </h6>
       <div>
         <h1 className={blogPostStyles.title}>{title}</h1>

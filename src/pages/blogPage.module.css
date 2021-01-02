@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+.earlier-entries-container {
+  margin-top: 3rem;
+}
+
 .thumbnail-container {
   width: 25%;
 }
@@ -17,52 +21,60 @@
 
 .hero-thumbnail-container {
   width: 50%;
+  margin-left: 1rem;
 }
 
 .hero-link-container {
   text-decoration: none;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 }
 
-.heroTitle {
-  font-size: 3.2rem;
+.hero-title {
+  font-size: 2.75rem;
   margin-bottom: 0.2rem;
 }
 
-.heroCaption {
-  font-size: 1.2rem;
+.hero-caption {
+  font-size: 1rem;
   font-style: italic;
   color: #747474;
+  margin-bottom: 0.2rem;
+}
+
+.hero-blockquote {
+  font-size: .9rem;
 }
 
 .hero-text-container {
-  font-size: .8rem;
-  color: #747474;
-  padding: 1rem;
+  flex: 1;
 }
 
 .title {
   margin-top: .1rem;
   margin-bottom: .5rem;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .date {
   color: #747474;
+  font-size: .7rem;
 }
 
-.reading-time {
-  color: black;
-  font-weight: bold;
+.hero-date {
+  color: #747474;
+  font-size: .9rem;
+  margin-bottom: 1rem;
 }
 
 .caption {
-  color: black;
+  font-size: .9rem;
   font-style: italic;
+  color: #747474;
+  margin-bottom: 0.2rem;
 }
-
 
 @media (max-width: 901px) {
   .title {
@@ -72,6 +84,14 @@
 
   .caption {
     font-size: .8rem;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-caption {
+    font-size: 1rem;
   }
 
   .date {

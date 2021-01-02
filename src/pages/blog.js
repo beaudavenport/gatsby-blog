@@ -19,7 +19,7 @@ export const BlogThumbnailRow = ({ node }) => (
       <p className={blogPageStyles.caption}>
         {node.frontmatter.tagline}
       </p>
-      <p className={blogPageStyles.date}>
+      <h6 className={blogPageStyles.date}>
         by
         {' '}
         <Link to="/about/">
@@ -27,7 +27,7 @@ export const BlogThumbnailRow = ({ node }) => (
         </Link>
         {', '}
         {node.frontmatter.publishDate}
-      </p>
+      </h6>
     </div>
   </Link>
 );
@@ -38,12 +38,12 @@ BlogThumbnailRow.propTypes = {
 
 export const HeroBlogThumbnailRow = ({ node }) => (
   <Link to={node.fields.slug} className={blogPageStyles.heroLinkContainer}>
-    <div>
+    <div className={blogPageStyles.heroTextContainer}>
       <h1 className={blogPageStyles.heroTitle}>{node.frontmatter.title}</h1>
       <p className={blogPageStyles.heroCaption}>
         {node.frontmatter.tagline}
       </p>
-      <h6 className={blogPageStyles.date}>
+      <h6 className={blogPageStyles.heroDate}>
         by
         {' '}
         <Link to="/about/">
@@ -52,6 +52,7 @@ export const HeroBlogThumbnailRow = ({ node }) => (
         {', '}
         {node.frontmatter.publishDate}
       </h6>
+      <blockquote className={blogPageStyles.heroBlockquote} dangerouslySetInnerHTML={{ __html: node.frontmatter.excerpt }} />
     </div>
     <Img
       className={blogPageStyles.heroThumbnailContainer}
@@ -65,17 +66,19 @@ HeroBlogThumbnailRow.propTypes = {
 };
 
 const BlogPage = ({ data }) => {
-  const first3Nodes = data.allMarkdownRemark.edges.map((edge) => edge.node);
+  const [firstNode, ...otherNodes] = data.allMarkdownRemark.edges.map((edge) => edge.node);
   return (
     <Layout>
       <SEO title="Home" />
       <h6 className={pageStyles.breadcrumbs}>
         <Link to="/">Home</Link>
         {' / '}
-        <Link to="/">Blog</Link>
+        <Link to="/blog/">Blog</Link>
       </h6>
-      <div>
-        {first3Nodes.map((node) => (
+      <HeroBlogThumbnailRow node={firstNode} />
+      <div className={blogPageStyles.earlierEntriesContainer}>
+        <h6 className={pageStyles.subtitle}>Older Posts:</h6>
+        {otherNodes.map((node) => (
           <BlogThumbnailRow node={node} />
         ))}
       </div>
@@ -111,7 +114,7 @@ export const query = graphql`
             title
             publishDate
             tagline
-            readingTime
+            excerpt
             image {
               childImageSharp {
                 fixed(width: 175, height: 175, quality: 90) {
@@ -121,13 +124,12 @@ export const query = graphql`
             }
             heroImage: image {
               childImageSharp {
-                fixed(width: 350, height: 350, quality: 90) {
+                fixed(width: 250, height: 250, quality: 90) {
                   ...GatsbyImageSharpFixed
                 }
               }
             }
           }
-          excerpt(format: PLAIN, pruneLength: 200)
           fields {
             slug
           }

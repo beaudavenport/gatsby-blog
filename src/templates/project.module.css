@@ -23,6 +23,10 @@
   width: 300px;
 }
 
+.carousel-image-link {
+  padding: 1rem;
+}
+
 .carousel-item-caption {
   text-align: center;
   font-style: italic;

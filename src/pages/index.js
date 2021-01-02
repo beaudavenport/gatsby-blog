@@ -55,7 +55,7 @@ const IndexPage = ({ data }) => (
       .
     </p>
     <hr />
-    <h6>Latest Blog Post:</h6>
+    <h6 className={pageStyles.subtitle}>Latest Blog Post:</h6>
     <div className={containerStyles.container}>
       <HeroBlogThumbnailRow node={data.allMarkdownRemark.edges[0].node} />
     </div>
@@ -86,13 +86,13 @@ export const pageQuery = graphql`
             readingTime
             heroImage: image {
               childImageSharp {
-                fixed(width: 300, height: 300, quality: 90) {
+                fixed(width: 250, height: 250, quality: 90) {
                   ...GatsbyImageSharpFixed
                 }
               }
             }
+            excerpt
           }
-          excerpt(format: HTML, pruneLength: 250)
           fields {
             slug
           }

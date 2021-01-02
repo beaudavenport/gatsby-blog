@@ -12,7 +12,7 @@ irvingTheme.overrideThemeStyles = () => ({
   },
   blockquote: {
     color: '#747474',
-    borderLeft: '2px solid #747474',
+    borderLeft: '4px solid lightgray',
     paddingLeft: '.5rem',
     marginLeft: '.2rem !important',
   },

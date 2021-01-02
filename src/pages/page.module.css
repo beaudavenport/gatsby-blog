@@ -5,6 +5,12 @@
   font-weight: bold;
 }
 
+.subtitle {
+  font-style: italic;
+  color: #747474;
+  margin-bottom: 2rem;
+}
+
 .breadcrumbs, .breadcrumbs a {
   color: #747474;
   font-size: .8rem;

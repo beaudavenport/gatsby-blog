@@ -7,45 +7,33 @@ import Image from './image';
 const Sidebar = ({ siteTitle, siteDescription }) => (
   <sidebar className={sidebarStyles.avatarGroup}>
     <div className={sidebarStyles.avatarImageContainer}>
-      <Image />
+      <Link to="/">
+        <Image />
+      </Link>
     </div>
     <div className={sidebarStyles.avatarTextContainer}>
       <h2 className={sidebarStyles.avatarName}>
-        <Link
-          to="/"
-        >
+        <Link to="/">
           {siteTitle}
         </Link>
       </h2>
       <p className={sidebarStyles.subtitle}>{siteDescription}</p>
       <div className={sidebarStyles.linkContainer}>
-        <p style={{ marginBottom: '0.5rem' }}>
-          <Link
-            to="/"
-            style={{ textDecoration: 'underline' }}
-          >
+        <h6>
+          <Link to="/">
             Home
-            {' '}
           </Link>
-        </p>
-        <p style={{ marginBottom: '0.5rem' }}>
-          <Link
-            to="/blog/"
-            style={{ textDecoration: 'underline' }}
-          >
+        </h6>
+        <h6>
+          <Link to="/blog/">
             Blog
-            {' '}
           </Link>
-        </p>
-        <p>
-          <Link
-            to="/portfolio/"
-            style={{ textDecoration: 'underline' }}
-          >
+        </h6>
+        <h6>
+          <Link to="/portfolio/">
             Portfolio
-            {' '}
           </Link>
-        </p>
+        </h6>
       </div>
     </div>
   </sidebar>

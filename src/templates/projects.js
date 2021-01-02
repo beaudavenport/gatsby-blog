@@ -1,12 +1,12 @@
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Img from 'gatsby-image';
+import { Carousel } from 'react-responsive-carousel';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import projectStyles from './project.module.css';
 import pageStyles from '../pages/page.module.css';
-import { Carousel } from 'react-responsive-carousel';
 
 export default function ProjectTemplate({ data }) {
   const { markdownRemark, desktopImages, mobileImages } = data;
@@ -17,7 +17,11 @@ export default function ProjectTemplate({ data }) {
   return (
     <Layout>
       <SEO title={title} />
-      <p className={pageStyles.contentTitle}>Portfolio</p>
+      <h6 className={pageStyles.breadcrumbs}>
+        <Link to="/">Home</Link>
+        {' / '}
+        <Link to="/portfolio/">Portfolio</Link>
+      </h6>
       <div className={projectStyles.container}>
         <h1 className={projectStyles.title}>{title}</h1>
         <p className={projectStyles.subtitle}>
@@ -33,13 +37,16 @@ export default function ProjectTemplate({ data }) {
             <p className={projectStyles.carouselItemCaption}>Desktop</p>
             <Carousel>
               {desktopImages.edges.map((edge, i) => (
-                <div>
-                  <Img 
-                    fluid={edge.node.childImageSharp.fluid} 
-                    alt={`Desktop Screenshot ${i + 1} of ${title}`} 
-                  />)
-                </div>
-                ))}
+                <a
+                  className={projectStyles.carouselImageLink}
+                  href={edge.node.childImageSharp.fluid.src}
+                >
+                  <Img
+                    fluid={edge.node.childImageSharp.fluid}
+                    alt={`Desktop Screenshot ${i + 1} of ${title}`}
+                  />
+                </a>
+              ))}
             </Carousel>
           </div>
           <div className={projectStyles.carouselItemMobile}>
@@ -47,12 +54,13 @@ export default function ProjectTemplate({ data }) {
             <Carousel>
               {mobileImages.edges.map((edge, i) => (
                 <div>
-                  <Img 
-                    fluid={edge.node.childImageSharp.fluid} 
-                    alt={`Mobile Screenshot ${i + 1} of ${title}`} 
-                  />)
+                  <Img
+                    fluid={edge.node.childImageSharp.fluid}
+                    alt={`Mobile Screenshot ${i + 1} of ${title}`}
+                  />
+                  )
                 </div>
-                ))}
+              ))}
             </Carousel>
           </div>
         </div>
@@ -82,7 +90,7 @@ export const pageQuery = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(maxWidth: 500) {
+            fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid
             }
           }
