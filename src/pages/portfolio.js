@@ -6,7 +6,6 @@ import Img from 'gatsby-image';
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 import containerStyles from '../components/container.module.css';
-import blogPageStyles from './blogPage.module.css';
 import pageStyles from './page.module.css';
 import portfolioStyles from './portfolio.module.css';
 
@@ -16,7 +15,11 @@ const ProjectsPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Portfolio" />
-      <p className={pageStyles.contentTitle}>Portfolio</p>
+      <h6 className={pageStyles.breadcrumbs}>
+        <Link to="/">Home</Link>
+        {' / '}
+        <Link to="/">Portfolio</Link>
+      </h6>
       <div className={containerStyles.container}>
         <div className={portfolioStyles.container}>
           {projectNodes.map((node) => (

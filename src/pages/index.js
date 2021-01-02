@@ -1,44 +1,66 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
-import { PropTypes } from 'prop-types';
-import Img from 'gatsby-image';
-import SEO from '../components/seo';
-import containerStyles from '../components/container.module.css';
-import blogPageStyles from './blogPage.module.css';
-import pageStyles from './page.module.css';
+import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
+import SEO from '../components/seo';
+import pageStyles from './page.module.css';
+import containerStyles from '../components/container.module.css';
+import resume from '../data/files/Resume-2020.pdf';
+import { HeroBlogThumbnailRow } from './blog';
 
-const IndexPage = ({ data }) => {
-  const first3Nodes = data.allMarkdownRemark.edges.map((edge) => edge.node);
-  return (
-    <Layout>
-      <SEO title="Home" />
-      <p className={pageStyles.contentTitle}>Blog</p>
-      <div className={containerStyles.container}>
-        {first3Nodes.map((node) => (
-          <Link to={node.fields.slug} className={blogPageStyles.linkContainer}>
-            <Img className={blogPageStyles.thumbnailContainer} fixed={node.frontmatter.image.childImageSharp.fixed} />
-            <div className={blogPageStyles.textContainer}>
-              <h1 className={blogPageStyles.title}>{node.frontmatter.title}</h1>
-              <p className={blogPageStyles.caption}>
-                {node.frontmatter.tagline}
-              </p>
-              <p>
-                <span className={blogPageStyles.date}>{node.frontmatter.publishDate}</span>
-                <span className={blogPageStyles.readingTime}>
-                  {' • '}
-                  {node.frontmatter.readingTime}
-                  {' reading time'}
-                </span>
-              </p>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </Layout>
-  );
-};
+const IndexPage = ({ data }) => (
+  <Layout>
+    <SEO title="Home" />
+    <h6 className={pageStyles.breadcrumbs}>
+      <Link to="/">Home</Link>
+    </h6>
+    <h1>
+      Hey there! My name is Beau, and I’m a software engineer in St. Louis, Missouri.
+    </h1>
+    <p>
+      I specialize in
+      {' '}
+      <strong>ReactJS</strong>
+      ,
+      {' '}
+      <strong>React-Native</strong>
+      ,
+      {' '}
+      <strong>SSG technologies </strong>
+      (like
+      {' '}
+      <strong>Gatsby</strong>
+      ),
+      {' '}
+      <strong>NodeJS</strong>
+      ,
+      {' '}
+      and
+      {' '}
+      <strong>Cloud Infrastructure</strong>
+      .
+    </p>
+    <p>
+      <strong>Stay Connected! </strong>
+      Follow me on
+      {' '}
+      <a href="https://twitter.com/beau_dav">twitter</a>
+      , checkout my code on
+      {' '}
+      <a href="https://github.com/beaudavenport">github</a>
+      , or download my
+      {' '}
+      <a href={resume}>resume</a>
+      .
+    </p>
+    <hr />
+    <h6>Latest Blog Post:</h6>
+    <div className={containerStyles.container}>
+      <HeroBlogThumbnailRow node={data.allMarkdownRemark.edges[0].node} />
+    </div>
+  </Layout>
+);
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
@@ -46,17 +68,10 @@ IndexPage.propTypes = {
 
 export default IndexPage;
 
-export const query = graphql`
+export const pageQuery = graphql`
   query {
-    placeholderImage: file(relativePath: { eq: "images/shop.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     allMarkdownRemark(
-      limit: 3
+      limit: 1
       filter: { frontmatter: { type: { eq: "blog-posts"} } },
       sort: { fields: [frontmatter___number], order: DESC }
     ) {
@@ -69,12 +84,12 @@ export const query = graphql`
             publishDate
             tagline
             readingTime
-            image {
-            childImageSharp {
-              fixed(width: 150, height: 150, quality: 90) {
-                ...GatsbyImageSharpFixed
+            heroImage: image {
+              childImageSharp {
+                fixed(width: 300, height: 300, quality: 90) {
+                  ...GatsbyImageSharpFixed
+                }
               }
-            }
             }
           }
           excerpt(format: HTML, pruneLength: 250)
@@ -85,4 +100,4 @@ export const query = graphql`
       }
     }
   }
- `;
+`;

@@ -24,15 +24,17 @@ const Sidebar = ({ siteTitle, siteDescription }) => (
             to="/"
             style={{ textDecoration: 'underline' }}
           >
-            Blog
+            Home
+            {' '}
           </Link>
         </p>
         <p style={{ marginBottom: '0.5rem' }}>
           <Link
-            to="/about/"
+            to="/blog/"
             style={{ textDecoration: 'underline' }}
           >
-            About Me
+            Blog
+            {' '}
           </Link>
         </p>
         <p>
@@ -41,6 +43,7 @@ const Sidebar = ({ siteTitle, siteDescription }) => (
             style={{ textDecoration: 'underline' }}
           >
             Portfolio
+            {' '}
           </Link>
         </p>
       </div>

@@ -4,3 +4,9 @@
   color: #747474;
   font-weight: bold;
 }
+
+.breadcrumbs, .breadcrumbs a {
+  color: #747474;
+  font-size: .8rem;
+  margin-bottom: 2rem;
+}

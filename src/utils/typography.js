@@ -1,7 +1,7 @@
 import Typography from 'typography';
-import oceanBreezeTheme from 'typography-theme-ocean-beach';
+import irvingTheme from 'typography-theme-irving';
 
-oceanBreezeTheme.overrideThemeStyles = () => ({
+irvingTheme.overrideThemeStyles = () => ({
   a: {
     backgroundImage: 'none',
     color: '#288ddf',
@@ -10,7 +10,13 @@ oceanBreezeTheme.overrideThemeStyles = () => ({
   p: {
     marginBottom: '1rem',
   },
+  blockquote: {
+    color: '#747474',
+    borderLeft: '2px solid #747474',
+    paddingLeft: '.5rem',
+    marginLeft: '.2rem !important',
+  },
 });
 
-const typography = new Typography(oceanBreezeTheme);
+const typography = new Typography(irvingTheme);
 export default typography;

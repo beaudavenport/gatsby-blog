@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Img from 'gatsby-image';
@@ -16,18 +16,23 @@ export default function BlogTemplate({ data }) {
   return (
     <Layout>
       <SEO title={title} />
-      <p className={pageStyles.contentTitle}>Blog</p>
+      <h6 className={pageStyles.breadcrumbs}>
+        <Link to="/">Home</Link>
+        {' / '}
+        <Link to="/">Blog</Link>
+      </h6>
       <div>
         <h1 className={blogPostStyles.title}>{title}</h1>
         <p className={blogPostStyles.tagline}>{tagline}</p>
-        <p>
-          <span className={blogPostStyles.date}>{publishDate}</span>
-          <span className={blogPostStyles.readingTime}>
-            {' • '}
-            {readingTime}
-            {' reading time'}
-          </span>
-        </p>
+        <h6 className={blogPostStyles.date}>
+          by
+          {' '}
+          <Link to="/about/">
+            Beau Davenport
+          </Link>
+          {', '}
+          {publishDate}
+        </h6>
         <div className={blogPostStyles.imageContainer}>
           <Img
             fluid={image.childImageSharp.fluid}
