@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: '/gatsby-blog',
   siteMetadata: {
     title: 'Beau Davenport',
     description: 'Full-Stack JS Dev',
