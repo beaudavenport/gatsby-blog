@@ -15,6 +15,14 @@ irvingTheme.overrideThemeStyles = () => ({
     borderLeft: '4px solid lightgray',
     paddingLeft: '.5rem',
     marginLeft: '.2rem !important',
+    fontSize: '.8rem !important',
+  },
+  code: {
+    backgroundColor: '#4f4f4f',
+    color: '#dbdbdb',
+    paddingLeft: '5px !important',
+    paddingRight: '5px !important',
+    borderRadius: '3px !important',
   },
 });
 

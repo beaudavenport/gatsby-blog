@@ -33,7 +33,7 @@
 }
 
 .hero-title {
-  font-size: 2.75rem;
+  font-size: 2rem;
   margin-bottom: 0.2rem;
 }
 
@@ -78,7 +78,7 @@
 
 @media (max-width: 901px) {
   .title {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     margin-bottom: .5rem;
   }
 
@@ -87,7 +87,7 @@
   }
 
   .hero-title {
-    font-size: 2.3rem;
+    font-size: 1.75rem;
   }
 
   .hero-caption {
