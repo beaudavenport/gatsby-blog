@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import sidebarStyles from './sidebar.module.css';
+import * as sidebarStyles from './sidebar.module.css';
 import Image from './image';
 
 const Sidebar = ({ siteTitle, siteDescription }) => (

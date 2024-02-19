@@ -5,8 +5,8 @@ import Img from 'gatsby-image';
 import { Carousel } from 'react-responsive-carousel';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import projectStyles from './project.module.css';
-import pageStyles from '../pages/page.module.css';
+import * as projectStyles from './project.module.css';
+import * as pageStyles from '../pages/page.module.css';
 
 export default function ProjectTemplate({ data }) {
   const { markdownRemark, desktopImages, mobileImages } = data;

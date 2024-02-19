@@ -1,5 +1,7 @@
 ---
 type: projects
+number: 1
+context: professional
 title: Celestial Loom
 url: http://celestialoomastrology.com
 techStack: Gatsby, Netlify, Netlify CMS, Snipcart e-commerce 

@@ -11,7 +11,7 @@ irvingTheme.overrideThemeStyles = () => ({
     marginBottom: '1rem',
   },
   blockquote: {
-    color: '#747474',
+    color: '#646464',
     borderLeft: '4px solid lightgray',
     paddingLeft: '.5rem',
     marginLeft: '.2rem !important',

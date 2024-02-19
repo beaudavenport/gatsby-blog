@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import './layout.css';
-import layoutStyles from './layout.module.css';
+import * as layoutStyles from './layout.module.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 import Sidebar from './sidebar';

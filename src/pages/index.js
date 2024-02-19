@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import pageStyles from './page.module.css';
-import containerStyles from '../components/container.module.css';
-import resume from '../data/files/Resume-2020.pdf';
+import * as pageStyles from './page.module.css';
+import * as containerStyles from '../components/container.module.css';
+import resume from '../data/files/beau-davenport-resume-2024.pdf';
 import { HeroBlogThumbnailRow } from './blog';
 
 const IndexPage = ({ data }) => (
@@ -27,6 +27,12 @@ const IndexPage = ({ data }) => (
       <strong>React-Native</strong>
       ,
       {' '}
+      <strong>Ruby on Rails</strong>
+      ,
+      {' '}
+      <strong>Analytics</strong>
+      ,
+      {' '}
       <strong>SSG technologies </strong>
       (like
       {' '}
@@ -45,10 +51,10 @@ const IndexPage = ({ data }) => (
       <strong>Stay Connected! </strong>
       Follow me on
       {' '}
-      <a href="https://twitter.com/beau_dav">twitter</a>
+      <a href="https://www.linkedin.com/in/beau-davenport-2b2a717b/">LinkedIn</a>
       , checkout my code on
       {' '}
-      <a href="https://github.com/beaudavenport">github</a>
+      <a href="https://github.com/beaudavenport">Github</a>
       , or download my
       {' '}
       <a href={resume}>resume</a>

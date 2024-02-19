@@ -3,8 +3,8 @@ import { graphql, Link } from 'gatsby';
 import { PropTypes } from 'prop-types';
 import Img from 'gatsby-image';
 import SEO from '../components/seo';
-import blogPageStyles from './blogPage.module.css';
-import pageStyles from './page.module.css';
+import * as blogPageStyles from './blogPage.module.css';
+import * as pageStyles from './page.module.css';
 
 import Layout from '../components/layout';
 

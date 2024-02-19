@@ -1,5 +1,7 @@
 ---
 type: projects
+number: 2
+context: personal
 title: AI Storefront Generator
 url: https://beaudavenport.github.io/ai-storefront-generator/
 techStack: Gatsby, Bulma, Google Cloud Platform (Natural Language API), Deep AI API

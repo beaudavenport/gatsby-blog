@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
-import blogPostStyles from './blogPost.module.css';
+import * as blogPostStyles from './blogPost.module.css';
 import SEO from '../components/seo';
-import pageStyles from '../pages/page.module.css';
+import * as pageStyles from '../pages/page.module.css';
 
 export default function BlogTemplate({ data }) {
   const { markdownRemark } = data;
@@ -47,6 +47,7 @@ export default function BlogTemplate({ data }) {
     </Layout>
   );
 }
+
 BlogTemplate.propTypes = {
   data: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
